@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Happy Birthday, Pratima ❤️</title>
+  <meta name="description" content="A romantic and interactive birthday surprise created with love by Deep for Pratima.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Animated Background Canvas -->
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- Floating Audio Player Bar (Dynamic Island Style) -->
+  <div class="music-pill" id="music-player">
+    <div class="music-progress-track">
+      <div class="music-progress-fill" id="music-progress-bar"></div>
+    </div>
+    <button class="music-toggle-btn" id="music-toggle" aria-label="Play or pause romantic background music">
+      <div class="vinyl-disk" id="vinyl-disk">
+        <i class="fa-solid fa-heart vinyl-heart"></i>
+      </div>
+      <div class="music-info">
+        <span class="music-label">Our Song ❤️</span>
+        <span class="music-status" id="music-status">Tap to play music 🎵</span>
+      </div>
+      <div class="equalizer-bars" id="equalizer-bars" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </button>
+    <button class="music-mute-btn" id="music-mute" aria-label="Mute or unmute music" title="Mute/Unmute">
+      <i class="fa-solid fa-volume-high" id="mute-icon"></i>
+    </button>
+    <audio id="bg-audio" preload="auto" loop playsinline webkit-playsinline autoplay>
+      <source src="music/music.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top-btn" aria-label="Scroll back to top" title="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+    <span class="btn-glow"></span>
+  </button>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <div class="page-wrapper">
+
+    <!-- ==============================================
+         1. HERO / OPENING SECTION
+         ============================================== -->
+    <header class="hero-section" id="hero">
+      <div class="hero-decorations" aria-hidden="true">
+        <span class="floating-sparkle sparkle-1">✨</span>
+        <span class="floating-sparkle sparkle-2">💖</span>
+        <span class="floating-sparkle sparkle-3">✨</span>
+      </div>
+
+      <div class="container hero-container">
+        <!-- Floating Romantic Tag -->
+        <div class="hero-badge reveal-fade">
+          <i class="fa-solid fa-sparkles"></i>
+          <span>Today is all about you, Pratima</span>
+          <i class="fa-solid fa-sparkles"></i>
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="hero-title reveal-fade" id="hero-title">
+          Happy Birthday, <span class="girlfriend-name-display highlight-gradient">Pratima</span> <span class="beating-heart">❤️</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="hero-subtitle reveal-fade" id="hero-subtitle">
+          To the most beautiful person who came into my life...
+        </p>
+
+        <!-- Hero Photo Frame / Card Area -->
+        <div class="hero-photo-wrapper reveal-zoom">
+          <div class="hero-photo-glow"></div>
+          <div class="hero-photo-card">
+            <div class="photo-inner">
+              <img src="images/her-photo.jpg" alt="Her Photo" id="hero-photo" class="hero-image" decoding="async" fetchpriority="high" onerror="this.onerror=null; this.src='images/photo1.jpg';">
+              <div class="hero-photo-overlay">
+                <span class="photo-caption-pill">The one who stole my heart 💫</span>
+              </div>
+            </div>
+            <div class="card-ornament top-left"></div>
+            <div class="card-ornament bottom-right"></div>
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="hero-cta reveal-fade">
+          <a href="#countdown" class="btn-romantic-primary" id="start-story-btn">
+            <span>Start Our Story ❤️</span>
+            <i class="fa-solid fa-chevron-down btn-arrow"></i>
+            <span class="button-sparkle"></span>
+          </a>
+        </div>
+
+        <!-- Animated Teaser Line -->
+        <p class="hero-teaser reveal-fade" id="hero-teaser">
+          <i class="fa-solid fa-gift pulse-icon"></i>
+          <span>Someone very special has a surprise waiting for you...</span>
+        </p>
+      </div>
+
+      <!-- Smooth Scroll Indicator -->
+      <a href="#countdown" class="scroll-down-indicator" aria-label="Scroll down">
+        <div class="mouse-icon">
+          <div class="mouse-wheel"></div>
+        </div>
+      </a>
+    </header>
+
+
+    <!-- ==============================================
+         2. BIRTHDAY COUNTDOWN SECTION
+         ============================================== -->
+    <section class="section-padding countdown-section" id="countdown">
+      <div class="container">
+        <div class="section-header text-center reveal-fade">
+          <span class="section-tag">
+            <i class="fa-solid fa-hourglass-half"></i> The Countdown
+          </span>
+          <h2 class="section-title">Counting Down to Your Special Day</h2>
+          <p class="section-subtitle">Every second with you is a gift, and every second until your birthday is worth celebrating.</p>
+        </div>
+
+        <!-- Countdown Timer Card -->
+        <div class="countdown-glass-card reveal-up" id="countdown-wrapper">
+          <div class="countdown-grid" id="countdown-grid">
+            <div class="timer-unit">
+              <div class="timer-box">
+                <span class="timer-number" id="cd-days">00</span>
+              </div>
+              <span class="timer-label">Days</span>
+            </div>
+            <div class="timer-separator">:</div>
+            <div class="timer-unit">
+              <div class="timer-box">
+                <span class="timer-number" id="cd-hours">00</span>
+              </div>
+              <span class="timer-label">Hours</span>
+            </div>
+            <div class="timer-separator">:</div>
+            <div class="timer-unit">
+              <div class="timer-box">
+                <span class="timer-number" id="cd-minutes">00</span>
+              </div>
+              <span class="timer-label">Minutes</span>
+            </div>
+            <div class="timer-separator">:</div>
+            <div class="timer-unit">
+              <div class="timer-box">
+                <span class="timer-number" id="cd-seconds">00</span>
+              </div>
+              <span class="timer-label">Seconds</span>
+            </div>
+          </div>
+
+          <!-- Birthday Has Arrived Banner (Hidden by default, shown by JS when reached) -->
+          <div class="birthday-arrived-banner" id="birthday-celebration-banner" style="display: none;">
+            <div class="celebration-icon">🎉🎂🎈</div>
+            <h3 class="celebration-headline">Today is your day! ❤️</h3>
+            <p class="celebration-text">The universe is celebrating the day you were born, and my heart is overflowing with love for you.</p>
+            <div class="celebration-sparkles">
+              <span>✨</span><span>💖</span><span>✨</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==============================================
+         3. "WHY YOU ARE SPECIAL" SECTION
+         ============================================== -->
+    <section class="section-padding special-section" id="why-special">
+      <div class="container">
+        <div class="section-header text-center reveal-fade">
+          <span class="section-tag">
+            <i class="fa-solid fa-star"></i> Irreplaceable
+          </span>
+          <h2 class="section-title">Why You Mean The World To Me</h2>
+          <p class="section-subtitle">Out of eight billion souls, here is why you are my one and only favorite person.</p>
+        </div>
+
+        <div class="special-cards-grid">
+          <!-- Card 1 -->
+          <div class="special-card reveal-up">
+            <div class="card-glow"></div>
+            <div class="card-icon-wrap">
+              <i class="fa-solid fa-face-smile-beam"></i>
+            </div>
+            <h3 class="card-heading">Your Smile</h3>
+            <p class="card-description">
+              The way your face lights up can heal my worst days in a heartbeat. It’s warm, effortless, and my single favorite sight in the universe.
+            </p>
+            <span class="card-heart-badge">❤️</span>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="special-card reveal-up" style="transition-delay: 0.1s;">
+            <div class="card-glow"></div>
+            <div class="card-icon-wrap">
+              <i class="fa-solid fa-hand-holding-heart"></i>
+            </div>
+            <h3 class="card-heading">Your Kind Heart</h3>
+            <p class="card-description">
+              You care so deeply and purely for everyone around you. Your gentle soul inspires me every single day to be a better person.
+            </p>
+            <span class="card-heart-badge">💖</span>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="special-card reveal-up" style="transition-delay: 0.2s;">
+            <div class="card-glow"></div>
+            <div class="card-icon-wrap">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <h3 class="card-heading">The Way You Understand Me</h3>
+            <p class="card-description">
+              Even in complete silence, you just get me. With you, I never have to pretend — I am completely safe, heard, and loved.
+            </p>
+            <span class="card-heart-badge">✨</span>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="special-card reveal-up" style="transition-delay: 0.3s;">
+            <div class="card-glow"></div>
+            <div class="card-icon-wrap">
+              <i class="fa-solid fa-feather-pointed"></i>
+            </div>
+            <h3 class="card-heading">Your Beautiful Soul</h3>
+            <p class="card-description">
+              More than your breathtaking beauty, it’s the quiet grace, kindness, and magic inside you that makes you truly unforgettable.
+            </p>
+            <span class="card-heart-badge">🌸</span>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="special-card reveal-up" style="transition-delay: 0.4s;">
+            <div class="card-glow"></div>
+            <div class="card-icon-wrap">
+              <i class="fa-solid fa-shield-heart"></i>
+            </div>
+            <h3 class="card-heading">Your Strength & Grace</h3>
+            <p class="card-description">
+              The gentle resilience you carry, the elegance with which you face challenges, and the peace you bring to every space you enter.
+            </p>
+            <span class="card-heart-badge">💫</span>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="special-card reveal-up" style="transition-delay: 0.5s;">
+            <div class="card-glow"></div>
+            <div class="card-icon-wrap">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <h3 class="card-heading">Every Little Thing About You</h3>
+            <p class="card-description">
+              From your cute little habits and morning messages to the way you laugh until your eyes crinkle — I adore every single piece of you.
+            </p>
+            <span class="card-heart-badge">🌹</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==============================================
+         4. OUR MEMORIES / PHOTO GALLERY
+         ============================================== -->
+    <section class="section-padding gallery-section" id="memories">
+      <div class="container">
+        <div class="section-header text-center reveal-fade">
+          <span class="section-tag">
+            <i class="fa-solid fa-images"></i> Precious Snapshots
+          </span>
+          <h2 class="section-title">Moments Frozen in Time</h2>
+          <p class="section-subtitle">Click to view in fullscreen or double tap with love ❤️</p>
+        </div>
+
+        <!-- Responsive Polaroid / Glass Gallery Grid -->
+        <div class="gallery-grid" id="memories-gallery">
+          <!-- Item 1 -->
+          <div class="gallery-card reveal-up" data-index="0">
+            <div class="gallery-photo-frame">
+              <img src="images/photo1.jpg" alt="Memory 1" loading="lazy" decoding="async">
+              <div class="gallery-overlay">
+                <i class="fa-solid fa-expand expand-icon"></i>
+                <span class="overlay-text">View Memory</span>
+              </div>
+            </div>
+            <div class="gallery-polaroid-caption">
+              <span class="caption-text">One of my favorite memories ❤️</span>
+              <span class="caption-date">Our Journey</span>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="gallery-card reveal-up" data-index="1" style="transition-delay: 0.1s;">
+            <div class="gallery-photo-frame">
+              <img src="images/photo2.jpg" alt="Memory 2" loading="lazy" decoding="async">
+              <div class="gallery-overlay">
+                <i class="fa-solid fa-expand expand-icon"></i>
+                <span class="overlay-text">View Memory</span>
+              </div>
+            </div>
+            <div class="gallery-polaroid-caption">
+              <span class="caption-text">A moment I wish I could live again. ✨</span>
+              <span class="caption-date">Sweet Times</span>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="gallery-card reveal-up" data-index="2" style="transition-delay: 0.2s;">
+            <div class="gallery-photo-frame">
+              <img src="images/photo3.jpg" alt="Memory 3" loading="lazy" decoding="async">
+              <div class="gallery-overlay">
+                <i class="fa-solid fa-expand expand-icon"></i>
+                <span class="overlay-text">View Memory</span>
+              </div>
+            </div>
+            <div class="gallery-polaroid-caption">
+              <span class="caption-text">Just you being you. 🌸</span>
+              <span class="caption-date">Pure Happiness</span>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="gallery-card reveal-up" data-index="3" style="transition-delay: 0.3s;">
+            <div class="gallery-photo-frame">
+              <img src="images/photo4.jpg" alt="Memory 4" loading="lazy" decoding="async">
+              <div class="gallery-overlay">
+                <i class="fa-solid fa-expand expand-icon"></i>
+                <span class="overlay-text">View Memory</span>
+              </div>
+            </div>
+            <div class="gallery-polaroid-caption">
+              <span class="caption-text">Another beautiful chapter of us. 💫</span>
+              <span class="caption-date">Unforgettable</span>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="gallery-card reveal-up" data-index="4" style="transition-delay: 0.4s;">
+            <div class="gallery-photo-frame">
+              <img src="images/photo5.jpg" alt="Memory 5" loading="lazy" decoding="async">
+              <div class="gallery-overlay">
+                <i class="fa-solid fa-expand expand-icon"></i>
+                <span class="overlay-text">View Memory</span>
+              </div>
+            </div>
+            <div class="gallery-polaroid-caption">
+              <span class="caption-text">Every smile of yours makes my world brighter. 🌟</span>
+              <span class="caption-date">Sunshine</span>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="gallery-card reveal-up" data-index="5" style="transition-delay: 0.5s;">
+            <div class="gallery-photo-frame">
+              <img src="images/photo6.jpg" alt="Memory 6" loading="lazy" decoding="async">
+              <div class="gallery-overlay">
+                <i class="fa-solid fa-expand expand-icon"></i>
+                <span class="overlay-text">View Memory</span>
+              </div>
+            </div>
+            <div class="gallery-polaroid-caption">
+              <span class="caption-text">To countless more adventures together. 🥂</span>
+              <span class="caption-date">Forever Together</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==============================================
+         5. OUR STORY / TIMELINE
+         ============================================== -->
+    <section class="section-padding timeline-section" id="story">
+      <div class="container">
+        <div class="section-header text-center reveal-fade">
+          <span class="section-tag">
+            <i class="fa-solid fa-heart-pulse"></i> Milestones
+          </span>
+          <h2 class="section-title">Our Romantic Story</h2>
+          <p class="section-subtitle">Every chapter of our journey has been pure magic. Here is how our story unfolded.</p>
+        </div>
+
+        <div class="timeline-container" id="story-timeline">
+          <!-- Timeline line -->
+          <div class="timeline-line" aria-hidden="true"></div>
+
+          <!-- Milestone 1 -->
+          <div class="timeline-item reveal-left">
+            <div class="timeline-dot">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-badge">The Beginning</span>
+              <h3 class="timeline-title">The Day We Met</h3>
+              <span class="timeline-date">A Date That Changed Everything</span>
+              <p class="timeline-desc">
+                The universe aligned, and for the first time, my eyes found yours. Little did I know that my entire world was about to change forever.
+              </p>
+            </div>
+          </div>
+
+          <!-- Milestone 2 -->
+          <div class="timeline-item reveal-right">
+            <div class="timeline-dot">
+              <i class="fa-solid fa-message"></i>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-badge">The Connection</span>
+              <h3 class="timeline-title">First Conversation</h3>
+              <span class="timeline-date">Hours Felt Like Seconds</span>
+              <p class="timeline-desc">
+                Talking to you felt as effortless as breathing. We talked for hours, laughing and sharing thoughts, and I remember wishing time would stand still.
+              </p>
+            </div>
+          </div>
+
+          <!-- Milestone 3 -->
+          <div class="timeline-item reveal-left">
+            <div class="timeline-dot">
+              <i class="fa-solid fa-sparkles"></i>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-badge">First Memory</span>
+              <h3 class="timeline-title">Our First Special Memory</h3>
+              <span class="timeline-date">The Spark That Lit The Flame</span>
+              <p class="timeline-desc">
+                That unforgettable moment when we shared our first special laughter. I caught myself looking at you and thought: "I want this smile around me forever."
+              </p>
+            </div>
+          </div>
+
+          <!-- Milestone 4 -->
+          <div class="timeline-item reveal-right">
+            <div class="timeline-dot">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-badge">Realization</span>
+              <h3 class="timeline-title">The Moment I Realized You Were Special</h3>
+              <span class="timeline-date">When Love Quietly Settled In</span>
+              <p class="timeline-desc">
+                It wasn't a movie scene — it was a quiet, warm certainty. Seeing your tenderness, your thoughtfulness, and your laugh made me realize you were the one.
+              </p>
+            </div>
+          </div>
+
+          <!-- Milestone 5 -->
+          <div class="timeline-item reveal-left">
+            <div class="timeline-dot">
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-badge">Cherished</span>
+              <h3 class="timeline-title">Our Favorite Memory</h3>
+              <span class="timeline-date">Carved In My Heart</span>
+              <p class="timeline-desc">
+                Holding hands, walking under the starry night sky, talking about the future. For a few perfect hours, the rest of the world completely faded away.
+              </p>
+            </div>
+          </div>
+
+          <!-- Milestone 6 -->
+          <div class="timeline-item reveal-right">
+            <div class="timeline-dot active-dot">
+              <i class="fa-solid fa-cake-candles"></i>
+            </div>
+            <div class="timeline-card active-card">
+              <span class="timeline-badge highlight-badge">Celebration</span>
+              <h3 class="timeline-title">Today ❤️</h3>
+              <span class="timeline-date">Celebrating You</span>
+              <p class="timeline-desc">
+                Celebrating the birthday of the most extraordinary soul on Earth. Here's to you, to us, and to every beautiful chapter yet to come.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==============================================
+         6. PERSONAL LOVE LETTER
+         ============================================== -->
+    <section class="section-padding letter-section" id="letter">
+      <div class="container">
+        <div class="section-header text-center reveal-fade">
+          <span class="section-tag">
+            <i class="fa-solid fa-envelope-open-text"></i> From My Heart
+          </span>
+          <h2 class="section-title">A Letter For You 💌</h2>
+          <p class="section-subtitle">Words straight from my heart, written especially for your special day.</p>
+        </div>
+
+        <div class="letter-wrapper reveal-zoom">
+          <div class="parchment-card" id="love-letter-card">
+            <!-- Decorative Wax Seal / Stamp -->
+            <div class="wax-seal">
+              <div class="wax-seal-inner">
+                <i class="fa-solid fa-heart"></i>
+              </div>
+            </div>
+
+            <!-- Letter Content -->
+            <div class="letter-body">
+              <div class="letter-salutation">
+                My Dearest <span class="girlfriend-name-display highlight-handwriting">Pratima</span>,
+              </div>
+
+              <div class="letter-content-text" id="letter-content-text">
+                From the moment you entered my life, everything became so much brighter, calmer, and full of warmth. You have this rare, beautiful grace about you that turns ordinary days into something truly magical.
+                <br><br>
+                Your smile is my favorite sight in the whole world, your laughter is pure melody to my soul, and being next to you is the only place where I truly feel at peace. Thank you for being my greatest support, my sweetest happiness, and the most precious blessing in my life. Loving you is the easiest and most wonderful thing I have ever done.
+                <br><br>
+                On your birthday, my only wish is that your eyes always shine with happiness, that your beautiful smile never fades, and that every dream you hold close to your heart comes true. I promise to cherish, respect, and love you more with every single passing day.
+                <br><br>
+                Happy Birthday, my beautiful Pratima. Forever and always.
+              </div>
+
+              <div class="letter-signature">
+                <span class="signature-line">With all my love and devotion,</span>
+                <span class="signature-name" id="letter-author-name">Deep</span>
+                <span class="signature-heart">❤️❤️❤️</span>
+              </div>
+            </div>
+
+            <!-- Gentle Paper Texture Accents -->
+            <div class="parchment-corner top-left"></div>
+            <div class="parchment-corner top-right"></div>
+            <div class="parchment-corner bottom-left"></div>
+            <div class="parchment-corner bottom-right"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==============================================
+         7. "THINGS I LOVE ABOUT YOU"
+         ============================================== -->
+    <section class="section-padding reasons-section" id="things-i-love">
+      <div class="container">
+        <div class="section-header text-center reveal-fade">
+          <span class="section-tag">
+            <i class="fa-solid fa-list-check"></i> An Endless List
+          </span>
+          <h2 class="section-title">10 Things I Love About You</h2>
+          <p class="section-subtitle">Tap on each card to reveal why you mean so much to me.</p>
+        </div>
+
+        <div class="reasons-grid" id="reasons-grid">
+          <!-- Items will be initialized with romantic defaults and can be driven by JS -->
+          <div class="reason-card reveal-up" data-card="1">
+            <div class="reason-number">01</div>
+            <div class="reason-icon"><i class="fa-solid fa-smile"></i></div>
+            <h3 class="reason-title">Your smile</h3>
+            <p class="reason-text">The way your face lights up and instantly melts away all of my worries.</p>
+            <div class="reason-burst-heart">💖</div>
+          </div>
+
+          <div class="reason-card reveal-up" data-card="2">
+            <div class="reason-number">02</div>
+            <div class="reason-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+            <h3 class="reason-title">Your voice</h3>
+            <p class="reason-text">The soothing sound that feels like a warm hug at the end of a long day.</p>
+            <div class="reason-burst-heart">💖</div>
+          </div>
+
+          <div class="reason-card reveal-up" data-card="3">
+            <div class="reason-number">03</div>
+            <div class="reason-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+            <h3 class="reason-title">Your kindness</h3>
+            <p class="reason-text">How gently you treat every living being and the genuine compassion in your heart.</p>
+            <div class="reason-burst-heart">💖</div>
+          </div>
+
+          <div class="reason-card reveal-up" data-card="4">
+            <div class="reason-number">04</div>
+            <div class="reason-icon"><i class="fa-solid fa-sparkles"></i></div>
+            <h3 class="reason-title">Your little habits</h3>
+            <p class="reason-text">All the cute, quirky expressions and gestures that are uniquely yours.</p>
+            <div class="reason-burst-heart">💖</div>
+          </div>
+
+          <div class="reason-card reveal-up" data-card="5">
+            <div class="reason-number">05</div>
+            <div class="reason-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+            <h3 class="reason-title">The way you care</h3>
+            <p class="reason-text">Remembering every small detail and loving so deeply with everything you have.</p>
+            <div class="reason-burst-heart">💖</div>
+          </div>
+
+          <div class="reason-card reveal-up" data-card="6">
+            <div class="reason-number">06</div>
+            <div class="reason-icon"><i class="fa-solid fa-face-grin-stars"></i></div>
+            <h3 class="reason-title">Your laugh</h3>
+            <p class="reason-text">That pure, contagious burst of happiness that makes my heart skip every single time.</p>
+            <div class="reason-burst-heart">💖</div>
+          </div>
+
+          <div class="reason-card reveal-up" data-card="7">
+            <div class="reason-number">07</div>
+            <div class="reason-icon"><i class="fa-solid fa-sun"></i></div>
+            <h3 class="reason-title">Your presence</h3>
+            <p class="reason-text">Just being in the same room with you gives me a calm and peace nowhere else offers.</p>
+            <div class="reason-burst-heart">💖</div>
+          </div>
+
+          <div class="reason-card reveal-up" data-card="8">
+            <div class="reason-number">08</div>
+            <div class="reason-icon"><i class="fa-solid fa-wand-magic"></i></div>
+            <h3 class="reason-title">The way you make ordinary days special</h3>
+            <p class="reason-text">A simple walk or a quiet dinner feels like an unforgettable celebration when I'm with you.</p>
+            <div class="reason-burst-heart">💖</div>
+          </div>
+
+          <div class="reason-card reveal-up" data-card="9">
+            <div class="reason-number">09</div>
+            <div class="reason-icon"><i class="fa-solid fa-gem"></i></div>
+            <h3 class="reason-title">Your beautiful heart</h3>
+            <p class="reason-text">Pure, resilient, graceful, and overflowing with endless love and warmth.</p>
+            <div class="reason-burst-heart">💖</div>
+          </div>
+
+          <div class="reason-card reveal-up" data-card="10">
+            <div class="reason-number">10</div>
+            <div class="reason-icon"><i class="fa-solid fa-infinity"></i></div>
+            <h3 class="reason-title">Simply... you ❤️</h3>
+            <p class="reason-text">Every flaw, every perfection, every part of who you are. I wouldn't change a single thing.</p>
+            <div class="reason-burst-heart">💖</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==============================================
+         8. SPECIAL SURPRISE (EMOTIONAL CLIMAX)
+         ============================================== -->
+    <section class="section-padding surprise-section" id="surprise">
+      <div class="container text-center">
+        <div class="surprise-box-container reveal-fade">
+          <span class="surprise-tag">
+            <i class="fa-solid fa-gift"></i> One Final Moment
+          </span>
+          <h2 class="surprise-teaser-title">There's one more thing...</h2>
+          <p class="surprise-teaser-desc">A special message waiting just for you on your birthday.</p>
+
+          <!-- Interactive Gift Box Trigger -->
+          <div class="surprise-gift-trigger" id="surprise-trigger-area">
+            <button class="btn-surprise-gift" id="open-surprise-btn" aria-label="Open your birthday surprise">
+              <span class="gift-icon-bounce">🎁</span>
+              <span class="gift-btn-text">Open Your Surprise</span>
+              <span class="btn-shine"></span>
+            </button>
+            <div class="gift-hint">Tap the gift above ✨</div>
+          </div>
+
+          <!-- Surprise Climax Message Reveal Area (Initially Hidden) -->
+          <div class="surprise-climax-card" id="surprise-reveal-card" style="display: none;">
+            <div class="confetti-fireworks-indicator" aria-hidden="true">
+              <span>🎆</span><span>💖</span><span>🎉</span><span>✨</span>
+            </div>
+
+            <div class="climax-glow"></div>
+            
+            <h2 class="climax-main-title">
+              Happy Birthday, My Love ❤️
+            </h2>
+
+            <div class="climax-quote-divider">
+              <span class="line"></span>
+              <i class="fa-solid fa-heart"></i>
+              <span class="line"></span>
+            </div>
+
+            <p class="climax-quote-body">
+              "I don't know what the future holds, but I know that every moment with you is something I'll always treasure."
+            </p>
+
+            <div class="climax-extra-romantic">
+              <p>You make this world a gentler, more magical place just by being in it. Thank you for being my love, my inspiration, and my home.</p>
+            </div>
+
+            <div class="climax-confetti-btn-wrap">
+              <button class="btn-replay-magic" id="replay-magic-btn">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Shower More Love!
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==============================================
+         9. FINAL SECTION & FOOTER
+         ============================================== -->
+    <footer class="final-section" id="final-farewell">
+      <div class="container text-center reveal-fade">
+        <!-- Floating Big Beating Heart -->
+        <div class="big-beating-heart-wrap">
+          <div class="heart-pulse-glow"></div>
+          <div class="big-heart-symbol" id="final-heart">❤️</div>
+        </div>
+
+        <h2 class="final-title">
+          Happy Birthday, <span class="girlfriend-name-display highlight-gradient">Pratima</span> ❤️
+        </h2>
+
+        <p class="final-wishes">
+          May your smile always stay this beautiful.
+        </p>
+
+        <div class="final-signature-block">
+          <p class="sign-off-words">With all my love,</p>
+          <p class="sign-off-name" id="final-boyfriend-name">Deep</p>
+        </div>
+
+        <div class="final-divider">
+          <span></span>
+          <i class="fa-solid fa-infinity"></i>
+          <span></span>
+        </div>
+
+        <p class="final-footer-credit">
+          Made with ❤️ especially for you.
+        </p>
+      </div>
+    </footer>
+
+  </div> <!-- End .page-wrapper -->
+
+
+  <!-- ==============================================
+       PHOTO LIGHTBOX MODAL
+       ============================================== -->
+  <div class="lightbox-modal" id="lightbox-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close-btn" id="lightbox-close" aria-label="Close photo preview">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <button class="lightbox-nav-btn prev-btn" id="lightbox-prev" aria-label="Previous photo">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <div class="lightbox-image-container">
+        <img src="" alt="Full view" id="lightbox-image" class="lightbox-img">
+        <div class="lightbox-caption-box">
+          <p class="lightbox-caption-text" id="lightbox-caption">Caption</p>
+          <span class="lightbox-counter" id="lightbox-counter">1 / 6</span>
+        </div>
+      </div>
+
+      <button class="lightbox-nav-btn next-btn" id="lightbox-next" aria-label="Next photo">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Surprise Confetti Canvas -->
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
