@@ -214,8 +214,13 @@ function initCountdown() {
 
     if (diff <= 0 || isToday) {
       // Birthday has arrived!
-      countdownGrid.style.display = "none";
-      banner.style.display = "block";
+      if (countdownGrid.style.display !== "none") {
+        countdownGrid.style.display = "none";
+        banner.style.display = "block";
+        if (typeof triggerConfettiExplosion === "function") {
+          triggerConfettiExplosion();
+        }
+      }
     } else {
       countdownGrid.style.display = "flex";
       banner.style.display = "none";
